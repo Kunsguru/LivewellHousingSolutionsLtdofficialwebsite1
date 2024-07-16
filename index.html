@@ -117,12 +117,43 @@
         form button:hover {
             background-color: #45a049;
         }
-        
+
         video {
             width: 100%;
             height: auto;
         }
     </style>
+    <script>
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+
+        function requestPassword(callback) {
+            const password = prompt('Please enter the password to access this content:');
+            if (password === 'correctPassword') {
+                callback();
+            } else {
+                alert('Incorrect password. Access denied.');
+            }
+        }
+
+        function playMedia(element) {
+            requestPassword(() => {
+                element.play();
+            });
+        }
+
+        function downloadMedia(url) {
+            requestPassword(() => {
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = url.split('/').pop();
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -170,19 +201,19 @@
         <h2>Media</h2>
         <div class="media-content">
             <h3>Company Overview Video</h3>
-            <video controls>
+            <video controls onplay="playMedia(this)">
                 <source src="/lv-0-20240716222800.MP4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <a href="‎/lv-0-20240716222800.MP4" download="Company Overview.mp4" class="download-link">Download Video</a>
+            <a href="#" onclick="downloadMedia('/lv-0-20240716222800.MP4')" class="download-link">Download Video</a>
         </div>
         <div class="media-content">
             <h3> Listen to the Business Model </h3>
-            <audio controls>
+            <audio controls onplay="playMedia(this)">
                 <source src="/PTT-20240710-WA0082 (1)- (online-audio-converter.com).mp3" type="audio/mp3">
                 Your browser does not support the audio element.
             </audio>
-            <a href="/PTT-20240710-WA0082 (1)- (online-audio-converter.com).mp3" download="Business Model.mp3" class="download-link">Download Voice Note</a>
+            <a href="#" onclick="downloadMedia('/PTT-20240710-WA0082 (1)- (online-audio-converter.com).mp3')" class="download-link">Download Voice Note</a>
         </div>
     </section>
 
@@ -217,6 +248,5 @@
     </script>
 </body>
 </html>
-
 
 
