@@ -219,7 +219,7 @@
 
     <section id="contact">
         <h2>Contact</h2>
-        <form id="contact-form" action="mailto:mondaykingsley80@gmail.com" method="post" enctype="text/plain">
+        <form id="contact-form" action="mailto:livewell.equity@gmail.com?cc=mondaykingsley80@gmail.com" method="post" enctype="text/plain">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -243,7 +243,7 @@
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-            window.location.href = `mailto:mondaykingsley80@gmail.com?subject=Contact%20Form%20Submission&body=Name:%20${name}%0AEmail:%20${email}%0AMessage:%20${message}`;
+            window.location.href = `mailto:livewell.equity@gmail.com?cc=mondaykingsley80@gmail.com&subject=Contact%20Form%20Submission&body=Name:%20${name}%0AEmail:%20${email}%0AMessage:%20${message}`;
         });
     </script>
 </body>
