@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livewell Housing Solutions Ltd</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 2em;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cover-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+        }
+
+        .thumbnail-gallery {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 1em;
+        }
+
+        .thumbnail {
+            width: 30%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .media-content {
+            margin-bottom: 2em;
+        }
+
+        .download-link {
+            display: block;
+            margin-top: 0.5em;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .download-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #4CAF50;
+            color: white;
+            position: relative; /* Change to relative */
+            width: 100%;
+            bottom: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 60px; /* Add padding to bottom to prevent overlap */
+        }
+
+        form label {
+            margin-top: 10px;
+        }
+
+        form input, form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Livewell Housing Solutions Ltd</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Home</h2>
+        <img src="cover.jpg" alt="Cover Image" class="cover-image">
+        <p>Your trusted partner in housing solutions.</p>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <div class="thumbnail-gallery">
+            <img src="service1.jpg" alt="Service 1" class="thumbnail">
+            <img src="service2.jpg" alt="Service 2" class="thumbnail">
+            <img src="service3.jpg" alt="Service 3" class="thumbnail">
+        </div>
+        <ul>
+            <li>Loan Requests</li>
+            <li>Property Management</li>
+            <li>Real Estate Consultancy</li>
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <img src="about.jpg" alt="About Us Image" class="cover-image">
+        <p>Livewell Housing Solutions Ltd is dedicated to providing quality housing solutions and expert advice on property management.</p>
+    </section>
+
+    <section id="media">
+        <h2>Media</h2>
+        <div class="media-content">
+            <h3>Company Overview Video</h3>
+            <video controls>
+                <source src="overview.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <a href="overview.mp4" download="overview.mp4" class="download-link">Download Video</a>
+        </div>
+        <div class="media-content">
+            <h3>Client Testimonial Voice Note</h3>
+            <audio controls>
+                <source src="testimonial.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="testimonial.mp3" download="testimonial.mp3" class="download-link">Download Voice Note</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Livewell Housing Solutions Ltd. All rights reserved.</p>
+    </footer>
+
+    <script>
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Thank you for contacting us! We will get back to you soon.');
+});
+
+      
+    </script>
+</body>
+</html>
+
+
