@@ -154,11 +154,11 @@
             width: 20px; /* Adjust the size as needed */
             height: auto; 
         }
-        
+
         .unread-message-button {
             display: flex;
             align-items: center;
-            gap: 10px; /* Space between text and image */
+            gap: 10px;
         }
     </style>
     <script>
@@ -186,14 +186,28 @@
             });
         }
 
-        function showBusinessModel() {
-            document.getElementById('business-model').style.display = 'block';
-            window.location.href = '#business-model';
+        function toggleMessageStatus() {
+            const messageButton = document.getElementById('message-button');
+            const messageText = document.getElementById('message-text');
+            const messageIcon = document.getElementById('message-icon');
+            const businessModel = document.getElementById('business-model');
+
+            if (messageText.textContent === 'UNREAD MESSAGE') {
+                messageText.textContent = 'READ MESSAGE';
+                messageIcon.src = '/storage/emulated/0/Download/84tpIkbEsTge4.png!sw800.png';
+                businessModel.style.display = 'block';
+                window.location.href = '#business-model';
+            } else {
+                messageText.textContent = 'UNREAD MESSAGE';
+                messageIcon.src = '/storage/emulated/0/Download/New Message Flat Icon, Email and Website Button Stock Vector - Illustration of favorite, forum_ 91687771.jpeg';
+                businessModel.style.display = 'none';
+                window.location.href = '#about';
+            }
         }
 
-        function hideBusinessModel() {
-            document.getElementById('business-model').style.display = 'none';
-            window.location.href = '#about';
+        window.onload = function() {
+            const messageText = document.getElementById('message-text');
+            messageText.textContent = 'UNREAD MESSAGE';
         }
 
         function scrollToTop() {
@@ -242,49 +256,12 @@
         <img src="/IMG-20240707-WA0058.jpg" alt="Livewell Housing Solutions Ltd" class="cover-image">
         <p>Livewell Housing Solutions Ltd is dedicated to providing quality housing solutions and expert advice on property management.</p>
         
-        <button class="unread-message-button" onclick="showBusinessModel()">
-            <h3>UN READ MESSAGE</h3>
-            <img src="/New Message Flat Icon, Email and Website Button Stock Vector - Illustration of favorite, forum_ 91687771.jpeg" alt="Business Model Image" class="small-image">
+        <button class="unread-message-button" id="message-button" onclick="toggleMessageStatus()">
+            <span id="message-text">UNREAD MESSAGE</span>
+            <img id="message-icon" src="/storage/emulated/0/Download/New Message Flat Icon, Email and Website Button Stock Vector - Illustration of favorite, forum_ 91687771.jpeg" alt="Unread Message Icon" class="small-image">
         </button>
-    </section>
-
-    <section id="media">
-        <h2>Media</h2>
-        <div class="media-content">
-            <h3>Company Overview Video</h3>
-            <video controls onplay="playMedia(this)">
-                <source src="/lv-0-20240716222800.MP4 " type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <a href="#" onclick="downloadMedia('/lv-0-20240716222800.MP4' )" class="download-link">Download Video</a>
-        </div>
-        <div class="media-content">
-            <h3> Listen to the Business Model </h3>
-            <audio controls onplay="playMedia(this)">
-                <source src="/PTT-20240710-WA0082 (1)- (online-audio-converter.com).mp3" type="audio/mp3">
-                Your browser does not support the audio element.
-            </audio>
-            <a href="#" onclick="downloadMedia('/PTT-20240710-WA0082 (1)- (online-audio-converter.com).mp3')" class="download-link">Download Voice Note</a>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <form id="contact-form" action="mailto:livewell.equity@gmail.com?cc=mondaykingsley80@gmail.com" method="post" enctype="text/plain">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-
-    <section id="business-model" class="business-model">
+        
+        <section id="business-model" class="business-model">
         <h2>Business Model of Livewell Housing Solutions Ltd</h2>
         <p><strong>Motto:</strong> ... Own Your Tomorrow.</p>
 
@@ -319,15 +296,59 @@
         <p>Get in touch with us today to learn more about our services and how we can assist you in achieving your housing goals. Together, let's create a brighter future in housing.</p>
 
         <div class="button-container">
-            <button onclick="hideBusinessModel()">Close</button>
+            <button onclick="toggleMessageStatus()">Close</button>
             <button onclick="scrollToTop()">Back to Top</button>
         </div>
     </section>
+        
+    </section>
+    
+    
+    
+
+    <section id="media">
+        <h2>Media</h2>
+        <div class="media-content">
+            <h3>Company Overview Video</h3>
+            <video controls onplay="playMedia(this)">
+                <source src="/lv-0-20240716222800.MP4 " type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <a href="#" onclick="downloadMedia('/lv-0-20240716222800.MP4' )" class="download-link">Download Video</a>
+        </div>
+        <div class="media-content">
+            <h3> Listen to the Business Model </h3>
+            <audio controls onplay="playMedia(this)">
+                <source src="/PTT-20240710-WA0082 (1)- (online-audio-converter.com).mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="#" onclick="downloadMedia('/PTT-20240710-WA0082 (1)- (online-audio-converter.com).mp3')" class="download-link">Download Voice Note</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    
+        
 
     <footer>
         <p>&copy; 2024 Livewell Housing Solutions Ltd. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
 
 
