@@ -149,6 +149,17 @@
         .button-container button:hover {
             background-color: #45a049;
         }
+
+        .small-image {
+            width: 20px; /* Adjust the size as needed */
+            height: auto; 
+        }
+        
+        .unread-message-button {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between text and image */
+        }
     </style>
     <script>
         document.addEventListener('contextmenu', function(event) {
@@ -164,7 +175,6 @@
             }
         }
 
-        
         function downloadMedia(url) {
             requestPassword(() => {
                 const link = document.createElement('a');
@@ -231,7 +241,11 @@
         <h2>About Us</h2>
         <img src="/IMG-20240707-WA0058.jpg" alt="Livewell Housing Solutions Ltd" class="cover-image">
         <p>Livewell Housing Solutions Ltd is dedicated to providing quality housing solutions and expert advice on property management.</p>
-        <button onclick="showBusinessModel()">Important: ***Business Model of Livewell Housing Solutions Limited***</button>
+        
+        <button class="unread-message-button" onclick="showBusinessModel()">
+            <h3>UN READ MESSAGE</h3>
+            <img src="/storage/emulated/0/Download/New Message Flat Icon, Email and Website Button Stock Vector - Illustration of favorite, forum_ 91687771.jpeg" alt="Business Model Image" class="small-image">
+        </button>
     </section>
 
     <section id="media">
@@ -275,99 +289,46 @@
         <p><strong>Motto:</strong> ... Own Your Tomorrow.</p>
 
         <h3>Who We Are:</h3>
-        <p>Livewell Housing Solution Ltd is a premier housing service provider dedicated to easing the financial burden of rent and homeownership.</p>
-
-        <h3>Our Mission:</h3>
-        <p>To empower individuals and families to secure their desired living spaces, ease the burden of rent with financial flexibility and security.</p>
+        <p>Livewell Housing Solution Ltd is a premier housing service provider dedicated to transforming how individuals and families find, secure, and manage their living spaces. As a forward-thinking company, we pride ourselves on delivering exceptional solutions that meet the diverse needs of our clients.</p>
 
         <h3>Our Vision:</h3>
-        <p>To revolutionize the housing market by providing innovative, accessible, and reliable housing solutions.</p>
+        <p>To become the leading provider of innovative, affordable, and sustainable housing solutions in the region, empowering individuals and communities to thrive in their living spaces.</p>
 
-        <h3>Core Service Plans</h3>
+        <h3>Our Mission:</h3>
+        <p>Our mission is to revolutionize the housing industry by providing a comprehensive range of services, from property management to real estate consultancy. We are committed to delivering value, quality, and excellence in every aspect of our operations.</p>
 
-        <h4>1. Livewell Ease Rents:</h4>
-        <p><strong>Objective:</strong> Provide clients with their desired apartment and facilitate ease of rent payment.</p>
-        <p><strong>Membership Fee:</strong> #10,000 (Naira) (non-refundable, one-time payment).</p>
-        <p><strong>Security Deposit:</strong> 50% of the total rent.</p>
-        <p><strong>Funding Process:</strong></p>
+        <h3>What We Do:</h3>
         <ul>
-            <li>Processed within 30-90 days.</li>
-            <li>Payment made directly to the landlord.</li>
-        </ul>
-        <p><strong>Repayment Terms:</strong></p>
-        <ul>
-            <li>Payback within 6 to 10 months with a 1.5% monthly interest charge.</li>
-            <li>Default charges applied against the security deposit with incremental interest rates.</li>
+            <li>Property Management: Comprehensive management services for residential and commercial properties, ensuring optimal performance and value appreciation.</li>
+            <li>Real Estate Consultancy: Expert advice and guidance on property investments, market trends, and strategic planning.</li>
+            <li>Housing Solutions: Innovative and affordable housing options tailored to meet the unique needs of individuals and families.</li>
+            <li>Co-operative Community: Creating vibrant and sustainable co-operative communities that foster collaboration and mutual support.</li>
+            <li>Lease Plans: Flexible and customized lease plans that cater to the financial capabilities and preferences of our clients.</li>
         </ul>
 
-        <h4>2. Livewell Lease Plan:</h4>
-        <p><strong>Objective:</strong> Offer long-term rent stability and eliminate rent worries.</p>
-        <p><strong>Plan Options:</strong></p>
+        <h3>Why Choose Us:</h3>
+        <p>At Livewell Housing Solution Ltd, we are passionate about making a positive impact in the housing industry. Our team of dedicated professionals is committed to providing exceptional service, innovative solutions, and a seamless experience for our clients. Choose us for:</p>
         <ul>
-            <li>7-Year Rent Plan: Deposit Five year's rent upfront.</li>
-            <li>15-Year Rent Plan: Deposit ten years' rent upfront.</li>
+            <li>Expertise: Our team consists of seasoned professionals with extensive knowledge and experience in the housing sector.</li>
+            <li>Innovation: We continuously explore new ideas and technologies to enhance our services and exceed client expectations.</li>
+            <li>Client-Centric Approach: We prioritize the needs and satisfaction of our clients, ensuring personalized solutions and attentive support.</li>
+            <li>Integrity: We uphold the highest standards of integrity, transparency, and ethical conduct in all our dealings.</li>
         </ul>
-        <p><strong>Loan Facility:</strong> Eligible for loans up to 50% of the enrolled package with a 1.5% monthly interest.</p>
-        <p><strong>Benefits:</strong> Extended rent stability and financial flexibility.</p>
 
-        <h4>3. Livewell Co-operative Community:</h4>
-        <p><strong>Objective:</strong> Promote a saving culture and provide financial benefits.</p>
-        <p><strong>Saving Plan:</strong> Save monthly and qualify for loans twice the saved amount after 6 consecutive months.</p>
-        <p><strong>Membership Fee:</strong> #10,000 (Naira) (one time).</p>
-        <p><strong>Savings:</strong> #10,000 (Naira) (monthly payment) minimum and maximum any amount.</p>
-        <p><strong>Loan Terms:</strong> One-time interest fee of 1.5%.</p>
-        <p><strong>Member Benefits:</strong> As you are consistent with your savings with little or no withdrawal can be considered for some free housing benefits and incentives in the future.</p>
-        <h4>4. Investors </h4>
-        <p><strong>Objectives </strong>Investors are the live wire of every business. Investors funds set the business to its continuity. So Livewell has the biggest room and space for all investors. We say you are warmly welcome.</p>
-        <p><strong>Membership Fee:</strong> #10,000 (Naira) (one time).</p>
-        <p><strong>Member Benefits:</strong> No amount is considered little, your investment attracts 10% interest annually.</p>
-        
+        <h3>Contact Us:</h3>
+        <p>Get in touch with us today to learn more about our services and how we can assist you in achieving your housing goals. Together, let's create a brighter future in housing.</p>
 
-        <h3>Organizational Structure:</h3>
-        <p><strong>Hybrid Operations System.</strong></p>
-
-        <h4>Key Roles</h4>
-
-        <h5>1. Relationship Officers:</h5>
-        <p><strong>Role:</strong> Introduce and explain company plans to potential customers.</p>
-        <p><strong>Incentives:</strong> Regular bonuses and incentives for performance.</p>
-        <p><strong>Reporting:</strong> Directly to Community Managers.</p>
-        <p><strong>Flexibility:</strong> Can operate from anywhere in the country.</p>
-
-        <h5>2. Community Managers:</h5>
-        <p><strong>Role:</strong> Recruit and motivate Relationship Officers.</p>
-        <p><strong>Innovations:</strong> Organize workshops, seminars, and set up communication channels like WhatsApp groups.</p>
-        <p><strong>Rewards:</strong> Recommend officers for rewards and oversee team performance.</p>
-        <p><strong>Reporting:</strong> To Executives.</p>
-        <p><strong>Team Identity:</strong> Create unique team names and earn 10% of team efforts.</p>
-
-        <h5>3. Executives:</h5>
-        <p><strong>Composition:</strong> Manager, Risk Assessment Officers, Secretary, HR, and P.R.O.</p>
-        <p><strong>Role:</strong> Ensure smooth operations, provide solutions, and support the entire organization.</p>
-        <p><strong>Responsibility:</strong> Oversee company operations and maintain operational efficiency.</p>
-
-        <p>Livewell Housing Solution Ltd is dedicated to providing innovative and accessible housing solutions.</p>
-        <p><strong>Our Commitment:</strong> Empowering you to "Own Your Tomorrow" with financial flexibility and security.</p>
-        <p><strong>Join Us:</strong> Be part of a community that values your future and works towards making your housing dreams a reality.</p>
-<p>Our office is at shop 45, Semiso plaza No15 Ijegun road ikotun, old garage ikotun.Beside Addosser microfinance bank.</p>
-            <button onclick="hideBusinessModel()">Go Back</button>
-            <button onclick="scrollToTop()">Move to Top</button>
+        <div class="button-container">
+            <button onclick="hideBusinessModel()">Close</button>
+            <button onclick="scrollToTop()">Back to Top</button>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Livewell Housing Solutions Ltd. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            window.location.href = `mailto:livewell.equity@gmail.com?cc=mondaykingsley80@gmail.com&subject=Contact%20Form%20Submission&body=Name:%20${name}%0AEmail:%20${email}%0AMessage:%20${message}`;
-        });
-    </script>
 </body>
 </html>
+
+
 
