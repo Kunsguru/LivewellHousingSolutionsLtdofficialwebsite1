@@ -229,6 +229,29 @@
             const mailtoLink = `mailto:mondaykingsley80@gmail.com?cc=${email}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             window.location.href = mailtoLink;
         }
+
+        function changeAudioLanguage(language) {
+            const audioSource = document.getElementById('audio-source');
+            const audio = document.getElementById('audio');
+            switch (language) {
+                case 'yoruba':
+                    audioSource.src = '/path/to/yoruba-audio.mp3';
+                    break;
+                case 'igbo':
+                    audioSource.src = '/path/to/igbo-audio.mp3';
+                    break;
+                case 'hausa':
+                    audioSource.src = '/path/to/hausa-audio.mp3';
+                    break;
+                case 'pigin':
+                    audioSource.src = '/path/to/pigin-audio.mp3';
+                    break;
+                default:
+                    audioSource.src = '/path/to/english-audio.mp3';
+            }
+            audio.load();
+            audio.play();
+        }
     </script>
 </head>
 <body>
@@ -345,11 +368,20 @@
         </div>
         <div class="media-content">
             <h3> Listen to the Business Model </h3>
-            <audio controls onplay="playMedia(this)">
-                <source src="/lv_0_20240720130923-[AudioTrimmer.com].mp3" type="audio/mp3">
+            <audio id="audio" controls onplay="playMedia(this)">
+                <source id="audio-source" src="/lv_0_20240720130923-[AudioTrimmer.com].mp3" type="audio/mp3">
                 Your browser does not support the audio element.
             </audio>
             <a href="#" onclick="downloadMedia('/lv_0_20240720130923-[AudioTrimmer.com].mp3')" class="download-link">Download Voice Note</a>
+            <br>
+            <label for="language-select">Select Language:</label>
+            <select id="language-select" onchange="changeAudioLanguage(this.value)">
+                <option value="english">English</option>
+                <option value="yoruba">Yoruba</option>
+                <option value="igbo">Igbo</option>
+                <option value="hausa">Hausa</option>
+                <option value="pigin">Pigin</option>
+            </select>
         </div>
     </section>
 
@@ -374,4 +406,6 @@
     </footer>
 </body>
 </html>
+
+
 
