@@ -67,17 +67,83 @@
             height: auto;
             margin-bottom: 1em;
         }
+        
+        .video-container{
+        	width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+        	}
+        
+             .main-video  {
+            width: 100%;
+            height: auto;
+        }
 
         .download-link {
             display: block;
             margin-top: 0.5em;
             color: #4CAF50;
             text-decoration: none;
+            
+            cursor: pointer;
+            border-radius: 5px;
+            
         }
 
         .download-link:hover {
             text-decoration: underline;
+            
         }
+        
+        
+        
+        
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .thumbnail {
+            width: 30%;
+            cursor: pointer;
+            border: 3px solid #555;
+            border-radius: 5px;
+            transition: border 0.3s ease;
+        }
+
+        .thumbnail:hover {
+            border: 3px solid #00f;
+        }
+
+
+
+
+.controls {
+            margin-top: 15px;
+        }
+
+        .controls button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #888;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .controls button:hover {
+            background-color: #555;
+        }
+        
+
+
+
+
 
         footer {
             text-align: center;
@@ -119,10 +185,7 @@
             background-color: #45a049;
         }
 
-        video {
-            width: 100%;
-            height: auto;
-        }
+        
 
         .business-model {
             display: none;
@@ -404,6 +467,13 @@
 
         
         
+        
+        function playVideo(thumbnail) {
+            const videoUrl = thumbnail.getAttribute('data-video-url');
+            const videoElement = document.getElementById('main-video');
+            videoElement.src = videoUrl;
+        }
+        
     </script>
 </head>
 <body>
@@ -575,10 +645,16 @@
 
     <section id="media">
         <h2>Media</h2>
-        <div class="media-content">
+        <div class="video-container">
             <h3>Company Overview Video</h3>
-            <video controls onplay="playMedia(this)">
-                <source src="/lv_0_20240727041356_20240727_042323 (1).mp4 " type="video/mp4">
+        <div class="video-container">
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="/storage/emulated/0/Documents/pixelLab/20240804_135541.jpg" alt="Thumbnail 1" data-video-url="/storage/emulated/0/Download/lv_0_20240804103319_compressed.mp4" onclick="playVideo(this)">
+                <img class="thumbnail" src="/storage/emulated/0/Documents/pixelLab/20240804_135619.jpg" alt="Thumbnail 2" data-video-url="/storage/emulated/0/Download/lv_0_20240804104327_compressed.mp4" onclick="playVideo(this)">
+                <img class="thumbnail" src="/storage/emulated/0/Documents/pixelLab/20240804_135652.jpg" alt="Thumbnail 3" data-video-url="/storage/emulated/0/Download/lv_0_20240804105611_compressed.mp4" onclick="playVideo(this)">
+            </div>
+            <video id="main-video" class="main-video" controls>
+                <source src="/storage/emulated/0/Download/lv_0_20240804103319_compressed.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <a href="#" onclick="downloadMedia('/lv_0_20240727041356_20240727_042323 (1).mp4' )" class="download-link">Download Video</a>
@@ -620,10 +696,10 @@
     
     <footer>
         <p>&copy; 2024 Livewell Housing Solutions Ltd. All rights reserved.</p>
+	    <p>&copy; 2024 Emperorstatesman | 07045786155 . All rights reserved.</p>
     </footer>
 </body>
 </html>
-
 
 
 
